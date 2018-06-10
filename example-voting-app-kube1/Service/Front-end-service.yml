@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: Front-end-service
+  labels:
+     name: Front-end-service
+     app: demo-multi-tier
+   
+
+
+spec:
+  type: ClusterIP
+  ports: 
+  - port: 80
+    targetPort: 80
+  selector:
+    name: front-end-pod
+    app: demo-multi-tier
+ 
+
